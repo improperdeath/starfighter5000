@@ -1,10 +1,18 @@
 fileFormatVersion: 2
-guid: ac6178f50ba1e674bbb80fff8f5f572b
-timeCreated: 1520618902
+guid: bebb0f544a57c254eb59b85477b2c49e
+timeCreated: 1520628651
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Material
+    2100002: Material.002
+    2100004: Material.001
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,7 +43,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 10000
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -79,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

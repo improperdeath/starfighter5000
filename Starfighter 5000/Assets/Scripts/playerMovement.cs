@@ -13,7 +13,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour {
 
     //global character speed
-    float playerSpeed = 2.0f;
+    float playerSpeed = 1.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -34,34 +34,64 @@ public class playerMovement : MonoBehaviour {
         float v = Input.GetAxis("Mouse Y") * 3.0f;
         transform.Rotate(-v, h, 0f);
 
-        //speed up
-        if (Input.GetKey(KeyCode.W))
+        //boost
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             transform.Translate(0f, 0f, (2.0f * playerSpeed));
         }
 
-        //slow down
+        //speed up
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(0f, 0.3f, (1f * playerSpeed));
+        }
+
+        //back up
         else if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(0f, 0f, (0.5f * playerSpeed));
+            transform.Translate(0f, -0.3f, (-1f * playerSpeed));
         }
 
         //otherwise move forward at default speed
         else
         {
-            transform.Translate(0f, 0f, playerSpeed);
+            transform.Translate(0f, 0f, 0f);
         }
 
         //strafe left
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(-0.1f, 0f, 0f);
+            transform.Translate((-playerSpeed), 0f, 0f);
         }
 
         //strafe right
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(0.1f, 0f, 0f);
+            transform.Translate((playerSpeed), 0f, 0f);
+        }
+
+        //hover up
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.Translate(0f, (playerSpeed), 0f);
+        }
+
+        //hover down
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            transform.Translate(0f, (-playerSpeed), 0f);
+        }
+
+        //rotate left
+        if (Input.GetKey(KeyCode.Q))
+        {
+            transform.Rotate(0f, 0f, playerSpeed);
+        }
+
+        //rotate right
+        if (Input.GetKey(KeyCode.E))
+        {
+            transform.Rotate(0f, 0f, -playerSpeed);
         }
 
 

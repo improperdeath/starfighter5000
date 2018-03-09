@@ -1,0 +1,48 @@
+StarFighter 5000
+
+Made with Unity
+Created by Matt Dean
+
+
+Designs
+---------
+Cockpit
+Ville Seppanen
+
+Command Frigate
+K.L.Jonasson, Winnipeg, Canada.
+Triki Minut Interactive
+www.trikiminut.com
+
+Enemy Fighter
+K.L.Jonasson, Winnipeg, Canada.
+Triki Minut Interactive
+www.trikiminut.com
+
+Explosions
+Bleed - http://remusprites.carbonmade.com/
+
+Warp Effect
+https://opengameart.org/content/warp-effect
+
+Sounds
+---------
+Laser Fire
+Dklon
+
+Explosions
+http://www.cubeengine.com/forum.php4?action=display_thread&thread_id=2164
+
+Speed Boost
+Iwan Gabovitch (qubodup@gmail.com)
+
+Powerup Sound Effect
+Jesús Lastra
+
+Music
+---------
+Main Menu
+Ted Kerr
+
+Gameplay
+https://soundcloud.com/alexandr-zhelanov

@@ -41,7 +41,11 @@ public class playerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        movement();
+
+        if(Time.timeScale == 1)
+        {
+            movement();
+        }
 
         //check health
         if (playerHealth <= 0 && playerDead == false)

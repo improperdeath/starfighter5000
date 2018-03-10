@@ -9,23 +9,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour {
 
+    //gameObjects
+    public GameObject fullHealthBar;
+    float height;
+
     //global character speed
     float playerSpeed =0.5f;
+
+    //playerhealth
+    float playerHealth;
 
 	// Use this for initialization
 	void Start () {
         //lock cursor to playarea
         Cursor.lockState = CursorLockMode.Locked;
 
+        playerHealth = 100f;
     }
 	
 	// Update is called once per frame
 	void Update () {
         movement();
-	}
+
+        //check health
+        if (playerHealth <= 0)
+        {
+            playerDies();
+        }
+    }
 
     void movement()
     {
@@ -95,17 +110,39 @@ public class playerMovement : MonoBehaviour {
         {
             transform.Rotate(0f, 0f, -playerSpeed);
         }
+    }
 
+    void damagePlayer(float amount)
+    {
+        //update health
+        playerHealth -= amount;
+
+        //update healthbar
+        HealthBar.health = (playerHealth);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        playerDies();
+        //stop movement
+        stopMoving();
+
+        //determine other object
+        if(collision.gameObject.name == "frigate")
+        {
+            damagePlayer(30f);
+        }
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        playerDies();
+        //stop movement
+        stopMoving();
+
+        //determine other object
+        if (collision.gameObject.name == "frigate")
+        {
+            damagePlayer(30f);
+        }
     }
 
     public void playerDies()
@@ -121,6 +158,10 @@ public class playerMovement : MonoBehaviour {
 
 
         //stop movement and angling
+    }
+
+    private void stopMoving()
+    {
         GetComponent<Rigidbody>().maxAngularVelocity = 0.0f;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
     }

@@ -13,7 +13,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour {
 
     //global character speed
-    float playerSpeed = 1.0f;
+    float playerSpeed =0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -30,14 +30,14 @@ public class playerMovement : MonoBehaviour {
     void movement()
     {
         //y axis will be pivoted via the cursor
-        float h = Input.GetAxis("Mouse X") * 3.0f;
-        float v = Input.GetAxis("Mouse Y") * 3.0f;
-        transform.Rotate(-v, h, 0f);
+        float x = Input.GetAxis("Mouse X") * 3.0f;
+        float y = Input.GetAxis("Mouse Y") * 3.0f;
+        transform.Rotate(-y, x, 0f);
 
         //boost
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            transform.Translate(0f, 0f, (2.0f * playerSpeed));
+            transform.Translate(0f, 0.3f, (2.0f * playerSpeed));
         }
 
         //speed up

@@ -30,8 +30,10 @@ public class playerMovement : MonoBehaviour {
     void movement()
     {
         //y axis will be pivoted via the cursor
-        float x = Input.GetAxis("Mouse X") * 3.0f;
+        float x = (Input.GetAxis("Mouse X") * 3.0f);
         float y = Input.GetAxis("Mouse Y") * 3.0f;
+        
+        //do rotation by mouse
         transform.Rotate(-y, x, 0f);
 
         //boost
@@ -98,12 +100,27 @@ public class playerMovement : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        GetComponent<Rigidbody>().maxAngularVelocity = 0.0f;
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        playerDies();
     }
 
     private void OnCollisionStay(Collision collision)
     {
+        playerDies();
+    }
+
+    public void playerDies()
+    {
+        //start death sequence
+        //explosion sound
+
+
+        //red cover on screen
+
+
+        //death music
+
+
+        //stop movement and angling
         GetComponent<Rigidbody>().maxAngularVelocity = 0.0f;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
     }

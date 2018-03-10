@@ -94,6 +94,17 @@ public class playerMovement : MonoBehaviour {
             transform.Rotate(0f, 0f, -playerSpeed);
         }
 
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        GetComponent<Rigidbody>().maxAngularVelocity = 0.0f;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        GetComponent<Rigidbody>().maxAngularVelocity = 0.0f;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 }

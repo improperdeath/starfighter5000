@@ -17,8 +17,14 @@ public class playerMovement : MonoBehaviour {
     public GameObject fullHealthBar;
     float height;
 
+    //audio files
+    public AudioClip playerExplosion;
+    public AudioSource playerExplosionSource;
+
+    bool playerDead = false;
+
     //global character speed
-    float playerSpeed =0.5f;
+    float playerSpeed = 0.5f;
 
     //playerhealth
     float playerHealth;
@@ -29,6 +35,8 @@ public class playerMovement : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
 
         playerHealth = 100f;
+
+        playerExplosionSource.clip = playerExplosion;
     }
 	
 	// Update is called once per frame
@@ -36,7 +44,7 @@ public class playerMovement : MonoBehaviour {
         movement();
 
         //check health
-        if (playerHealth <= 0)
+        if (playerHealth <= 0 && playerDead == false)
         {
             playerDies();
         }
@@ -147,9 +155,10 @@ public class playerMovement : MonoBehaviour {
 
     public void playerDies()
     {
+        playerDead = true;
         //start death sequence
         //explosion sound
-
+        playerExplosionSource.Play();
 
         //red cover on screen
 

@@ -15,11 +15,16 @@ public class playerMovement : MonoBehaviour {
 
     //gameObjects
     public GameObject fullHealthBar;
+    public GameObject deathscreen;
+    public GameObject GUI;
     float height;
 
     //audio files
     public AudioClip playerExplosion;
     public AudioSource playerExplosionSource;
+    public AudioSource ambiance;
+    public AudioSource BGMusic;
+    public AudioSource MenuMusic;
 
     bool playerDead = false;
 
@@ -165,12 +170,17 @@ public class playerMovement : MonoBehaviour {
         playerExplosionSource.Play();
 
         //red cover on screen
+        deathscreen.SetActive(true);
+        Time.timeScale = 0f;
+        GUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-
-        //death music
-
-
-        //stop movement and angling
+        //audio
+        //stop music and ambiance
+        ambiance.Stop();
+        BGMusic.Stop();
+        MenuMusic.Play();
     }
 
     private void stopMoving()

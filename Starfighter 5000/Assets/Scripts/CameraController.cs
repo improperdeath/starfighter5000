@@ -26,6 +26,8 @@ public class CameraController : MonoBehaviour {
     {
         posOffset = transform.position - player.transform.position;
         rotOffset = -20.993f;
+
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

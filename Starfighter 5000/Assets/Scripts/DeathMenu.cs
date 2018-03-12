@@ -1,6 +1,15 @@
-﻿using System.Collections;
+﻿/************************************************
+ * 
+ * DeathMenu.cs
+ * This is used to handle the death screen
+ * 
+ * March 11th, 2018
+ *
+ ************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathMenu : MonoBehaviour {
 
@@ -21,7 +30,7 @@ public class DeathMenu : MonoBehaviour {
     public void MenuButton()
     {
         Time.timeScale = 1f;
-        //SceneManager.LoadScene("scene thing here");
+        SceneManager.LoadScene("menu");
     }
 
     public void QuitButton()

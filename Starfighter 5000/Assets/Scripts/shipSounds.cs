@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/************************************************
+ * 
+ * shipSounds.cs
+ * this is used to play the spaceship sounds
+ * 
+ * March 9th, 2018
+ *
+ ************************************************/
+ 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,17 +20,12 @@ public class shipSounds : MonoBehaviour {
     public AudioSource boostLoopSource;
     public AudioSource boostEndSource;
 
-    public AudioClip playerLaser;
-    public AudioSource playerLaserSource;
-
 
     // Use this for initialization
     void Start () {
         boostStartSource.clip = boostStart;
         boostLoopSource.clip = boostLoop;
         boostEndSource.clip = boostEnd;
-
-        playerLaserSource.clip = playerLaser;
 	}
 	
 	// Update is called once per frame
@@ -36,11 +40,6 @@ public class shipSounds : MonoBehaviour {
         {
             boostLoopSource.Stop();
             boostEndSource.Play();
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            playerLaserSource.Play();
         }
 	}
 }

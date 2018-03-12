@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/************************************************
+ * 
+ * PauseMenu.cs
+ * This is used to deal with the pause menu
+ * 
+ * March 11th, 2018
+ *
+ ************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +18,9 @@ public class PauseMenu : MonoBehaviour {
 
     public GameObject GUI;
     public GameObject PauseMenuUI;
+    public GameObject DeathMenuUI;
+
+    public Scene Menu;
 
     // Use this for initialization
     void Start() {
@@ -56,7 +67,7 @@ public class PauseMenu : MonoBehaviour {
     public void MenuButton()
     {
         Time.timeScale = 1f;
-        //SceneManager.LoadScene("scene thing here");
+        SceneManager.LoadScene("menu");
     }
 
     public void QuitButton()

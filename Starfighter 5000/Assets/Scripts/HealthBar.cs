@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/************************************************
+ * 
+ * HealthBar.cs
+ * This is used to keep the health bar updated
+ * 
+ * March 10th, 2018
+ *
+ ************************************************/
+
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

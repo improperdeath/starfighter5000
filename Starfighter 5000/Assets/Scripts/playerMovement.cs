@@ -129,7 +129,7 @@ public class playerMovement : MonoBehaviour {
         }
     }
 
-    void damagePlayer(float amount)
+    public void damagePlayer(float amount)
     {
         //update health
         playerHealth -= amount;

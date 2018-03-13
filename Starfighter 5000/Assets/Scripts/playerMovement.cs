@@ -144,9 +144,13 @@ public class playerMovement : MonoBehaviour {
         stopMoving();
 
         //determine other object
-        if(collision.gameObject.name == "frigate")
+        if (collision.gameObject.name == "frigate")
         {
             damagePlayer(30f);
+        }
+        if (collision.gameObject.name == "redOrb")
+        {
+            damagePlayer(5f);
         }
     }
 

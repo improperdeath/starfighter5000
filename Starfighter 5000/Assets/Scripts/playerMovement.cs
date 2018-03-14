@@ -18,6 +18,7 @@ public class playerMovement : MonoBehaviour {
     public GameObject deathscreen;
     public GameObject GUI;
     float height;
+    public GameObject WarningMessage;
 
     //audio files
     public AudioClip playerExplosion;
@@ -64,13 +65,25 @@ public class playerMovement : MonoBehaviour {
         {
             playerDies();
         }
+
+        //check if in playarea to determine if we need to show the warning message
+        if(isInPlayArea == false)
+        {
+            //show warning message
+            WarningMessage.SetActive(true);
+        }
+        else
+        {
+            //stop showing message
+            WarningMessage.SetActive(false);
+        }
     }
 
     void CheckPlayArea()
     {
         if(isInPlayArea == false)
         {
-            damagePlayer(10f);
+            damagePlayer(5f);
             Debug.Log(playerHealth);
         }
     }

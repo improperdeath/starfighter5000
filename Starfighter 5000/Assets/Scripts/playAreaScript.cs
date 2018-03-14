@@ -10,14 +10,20 @@ public class playAreaScript : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Left");
-        playerScript.isInPlayArea = false;
+        if (other.name == "inside_panels")
+        {
+            Debug.Log("Left");
+            playerScript.isInPlayArea = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered");
-        playerScript.isInPlayArea = true;
+        if (other.name == "inside_panels")
+        {
+            Debug.Log("Entered");
+            playerScript.isInPlayArea = true;
+        }
     }
 
     // Use this for initialization

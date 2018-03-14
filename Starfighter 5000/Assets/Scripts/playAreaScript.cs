@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playAreaScript : MonoBehaviour {
 
-    private playerMovement playerScript;
+    public  playerMovement playerScript;
 
     public GameObject player;
 

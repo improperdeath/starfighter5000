@@ -46,6 +46,9 @@ public class playerMovement : MonoBehaviour {
         playerExplosionSource.clip = playerExplosion;
 
         isInPlayArea = true;
+
+        //run check every second
+        InvokeRepeating("CheckPlayArea", 1, 1);
     }
 	
 	// Update is called once per frame
@@ -56,15 +59,19 @@ public class playerMovement : MonoBehaviour {
             movement();
         }
 
-        if(isInPlayArea == false)
-        {
-            damagePlayer(10f);
-        }
-
         //check health
         if (playerHealth <= 0 && playerDead == false)
         {
             playerDies();
+        }
+    }
+
+    void CheckPlayArea()
+    {
+        if(isInPlayArea == false)
+        {
+            damagePlayer(10f);
+            Debug.Log(playerHealth);
         }
     }
 

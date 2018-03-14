@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0aa17268b8bb84cbe539812770a98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherScript: {fileID: 0}
+  player: {fileID: 945780929}
 --- !u!135 &582684998
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -961,9 +961,9 @@ SphereCollider:
   m_GameObject: {fileID: 582684996}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 100
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &582684999
 MeshFilter:
@@ -980,7 +980,7 @@ Transform:
   m_GameObject: {fileID: 582684996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9000, y: 9000, z: 9000}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
@@ -5326,6 +5326,7 @@ MonoBehaviour:
   ambiance: {fileID: 804687770}
   BGMusic: {fileID: 1876095863}
   MenuMusic: {fileID: 1118878714}
+  isInPlayArea: 0
 --- !u!54 &945780932
 Rigidbody:
   m_ObjectHideFlags: 0

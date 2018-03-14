@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class playAreaScript : MonoBehaviour {
 
-    public playerMovement otherScript; 
+    private playerMovement playerScript;
+
+    public GameObject player;
 
     private void OnTriggerExit(Collider other)
     {
-        otherScript.damagePlayer(100f);
+        Debug.Log("Left");
+        playerScript.isInPlayArea = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Entered");
+        playerScript.isInPlayArea = true;
     }
 
     // Use this for initialization

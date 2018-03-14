@@ -18,8 +18,6 @@ public class MenuScreen : MonoBehaviour {
 
     public string MainGame;
 
-    public 
-
 	// Use this for initialization
 	void Start () {
 		
@@ -35,6 +33,12 @@ public class MenuScreen : MonoBehaviour {
     {
         Debug.Log("Starting game...");
         SceneManager.LoadScene("main");
+    }
+
+    public void CreditsButton()
+    {
+        Debug.Log("Starting credits...");
+        SceneManager.LoadScene("credits");
     }
 
     public void QuitButton()

@@ -26,6 +26,8 @@ public class playerMovement : MonoBehaviour {
     public AudioSource BGMusic;
     public AudioSource MenuMusic;
 
+    public bool isInPlayArea;
+
     bool playerDead = false;
 
     //global character speed
@@ -42,6 +44,8 @@ public class playerMovement : MonoBehaviour {
         playerHealth = 100f;
 
         playerExplosionSource.clip = playerExplosion;
+
+        isInPlayArea = true;
     }
 	
 	// Update is called once per frame
@@ -50,6 +54,11 @@ public class playerMovement : MonoBehaviour {
         if(Time.timeScale == 1)
         {
             movement();
+        }
+
+        if(isInPlayArea == false)
+        {
+            damagePlayer(10f);
         }
 
         //check health

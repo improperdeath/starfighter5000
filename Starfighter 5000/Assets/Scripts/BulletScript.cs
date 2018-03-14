@@ -26,6 +26,11 @@ public class BulletScript : MonoBehaviour
             //sound effect
             laserSource.Play();
 
+            #region Code Grabbed From Video
+            //video:
+            /*
+            https://www.youtube.com/watch?v=FD9HZB0Jn1w
+            */
             Temporary_Bullet_Handler = Instantiate(Bullet, Bullet_Emitter.transform.position, Bullet_Emitter.transform.rotation) as GameObject;
 
             //Sometimes bullets may appear rotated incorrectly due to the way its pivot was set from the original modeling package.
@@ -41,6 +46,7 @@ public class BulletScript : MonoBehaviour
 
             //Basic Clean Up, set the Bullets to self destruct after 10 Seconds, I am being VERY generous here, normally 3 seconds is plenty.
             Destroy(Temporary_Bullet_Handler, 3.0f);
+            #endregion
         }
     }
 }

@@ -19,7 +19,8 @@ public class StarFieldScript : MonoBehaviour {
 	void Start () {
         thisTransform = transform;  //caching transform for this obj
         starClipDistanceSqr = starClipDistance * starClipDistance;
-	}
+        starDistanceSqr = starDistance * starDistance;
+    }
 	
     private void CreateStars()
     {

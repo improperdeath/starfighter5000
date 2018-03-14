@@ -1010,7 +1010,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 610463605}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1342883911}
@@ -1081,10 +1081,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0971c8ac48e5a2d489b0dae6ad253ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starsMax: 100
-  starSize: 2.93
-  starDistance: 20
-  starClipDistance: 1
+  starsMax: 500
+  starSize: 0.5
+  starDistance: 150
+  starClipDistance: 5
 --- !u!198 &610463609
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -1145,7 +1145,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 923530988
+  randomSeed: -279895816
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6202,7 +6202,7 @@ Camera:
     height: 1
   near clip plane: 1
   far clip plane: 100000
-  field of view: 80
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

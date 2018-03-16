@@ -148,13 +148,13 @@ public class playerMovement : MonoBehaviour {
         //rotate left
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.Rotate(0f, 0f, playerSpeed);
+            transform.Rotate(0f, 0f, playerSpeed * 3);
         }
 
         //rotate right
         if (Input.GetKey(KeyCode.E))
         {
-            transform.Rotate(0f, 0f, -playerSpeed);
+            transform.Rotate(0f, 0f, -playerSpeed * 3);
         }
     }
 
@@ -169,6 +169,7 @@ public class playerMovement : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.collider.name);
         //stop movement
         stopMoving();
 
@@ -177,7 +178,7 @@ public class playerMovement : MonoBehaviour {
         {
             damagePlayer(30f);
         }
-        if (collision.gameObject.name == "redOrb")
+        if (collision.gameObject.name == "redOrbClone")
         {
             damagePlayer(5f);
         }

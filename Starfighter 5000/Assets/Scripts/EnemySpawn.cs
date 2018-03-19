@@ -8,6 +8,7 @@ public class EnemySpawn : MonoBehaviour {
 
     public GameObject enemyShip;
     public GameObject player;
+    public GameObject frigate;
 
     public float speed = 0.0f;
     float step;
@@ -36,7 +37,8 @@ public class EnemySpawn : MonoBehaviour {
         randomLocation = Random.insideUnitSphere * 2000; //5 is radius
         rotation = Vector3.RotateTowards(enemyVector, playerVector, step, 0.0f);
         rotationQuaternion = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
-        Instantiate(enemyShip, randomLocation, rotationQuaternion);
+        GameObject enemyShipSpawn = Instantiate(enemyShip, randomLocation, rotationQuaternion);
+        enemyShipSpawn.transform.LookAt(frigate.transform);
         //if (spawnedShips == false)
         //{
         //    for (int i = 0; i < countOfEnemies; i++)

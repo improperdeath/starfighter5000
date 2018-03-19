@@ -8,6 +8,7 @@ public class BulletScriptEnemy : MonoBehaviour
     public float Bullet_Forward_Force;
     public GameObject ship;
 
+    int randomNumber;
 
     public AudioClip laserSound;
     public AudioSource laserSource;
@@ -15,14 +16,15 @@ public class BulletScriptEnemy : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        laserSource.clip = laserSound;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         GameObject Temporary_Bullet_Handler;
-        if (Input.GetMouseButtonDown(0) && Time.timeScale == 1)
+        randomNumber = Random.Range(1, 500);
+        if (randomNumber == 1 && Time.timeScale == 1)
         {
             //sound effect
             laserSource.Play();

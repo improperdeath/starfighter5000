@@ -176,7 +176,7 @@ public class playerMovement : MonoBehaviour {
         //determine other object
         if (collision.gameObject.name == "frigate")
         {
-            damagePlayer(30f);
+            damagePlayer(50f);
         }
         if (collision.gameObject.name == "redOrbClone")
         {
@@ -192,7 +192,7 @@ public class playerMovement : MonoBehaviour {
         //determine other object
         if (collision.gameObject.name == "frigate")
         {
-            damagePlayer(30f);
+            damagePlayer(50f);
         }
     }
 

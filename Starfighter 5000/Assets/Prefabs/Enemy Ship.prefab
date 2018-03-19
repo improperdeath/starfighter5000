@@ -100,6 +100,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4899211994690460}
   - component: {fileID: 114865455052335178}
+  - component: {fileID: 114088414777651852}
+  - component: {fileID: 54853405058592386}
+  - component: {fileID: 136122517458709284}
   m_Layer: 0
   m_Name: Enemy Ship
   m_TagString: enemy
@@ -208,7 +211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760013266197006}
   m_LocalRotation: {x: -0, y: -0.76590806, z: -0, w: 0.6429502}
-  m_LocalPosition: {x: 266.49344, y: 0, z: 143.82338}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 800.00226, y: 800.0013, z: 800.0011}
   m_Children:
   - {fileID: 4355612508259582}
@@ -316,6 +319,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!54 &54853405058592386
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760013266197006}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &64013349843068094
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -410,6 +428,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114088414777651852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760013266197006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795e4a00b63bb3e45a987aac30ba4d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redOrb: {fileID: 1120441112184650, guid: a9b2d654eab1eeb4cbafc8e23a286cee, type: 2}
+  greenOrb: {fileID: 1887117061505290, guid: dc098b45d3f80ea449973f13f55f356e, type: 2}
+  player: {fileID: 1295056128815070, guid: 783e1c9042145254ba3e3ff9e708aefd, type: 2}
+  frigate: {fileID: 100000, guid: bebb0f544a57c254eb59b85477b2c49e, type: 3}
 --- !u!114 &114120584157795152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -458,7 +491,7 @@ MonoBehaviour:
   Bullet: {fileID: 1120441112184650, guid: a9b2d654eab1eeb4cbafc8e23a286cee, type: 2}
   Bullet_Forward_Force: 45000
   ship: {fileID: 1983022518608710}
-  laserSound: {fileID: 8300000, guid: 9fa7e29b5e97b894c8f6cd34161f65cd, type: 3}
+  laserSound: {fileID: 0}
   laserSource: {fileID: 82384243499989184}
 --- !u!122 &122058271072665014
 Halo:
@@ -504,3 +537,16 @@ Halo:
     serializedVersion: 2
     rgba: 4278232319
   m_Size: 2.42
+--- !u!136 &136122517458709284
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760013266197006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.011048454
+  m_Height: 0.06536804
+  m_Direction: 2
+  m_Center: {x: 0.00002436154, y: 0.0000998257, z: 0.00003263946}

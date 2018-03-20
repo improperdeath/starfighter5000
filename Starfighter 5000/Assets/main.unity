@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0053685526, g: 0.002468783, b: 0.001674855, a: 1}
+  m_IndirectSpecularColor: {r: 0.0053710146, g: 0.0024636555, b: 0.001677249, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1029,8 +1029,9 @@ CanvasRenderer:
 --- !u!1 &536458487
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 1997612987070430, guid: e3227ee31cab275468491f9c1bb26faf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1062733786}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 536458488}
@@ -1045,8 +1046,9 @@ GameObject:
 --- !u!4 &536458488
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 4291829058211856, guid: e3227ee31cab275468491f9c1bb26faf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1062733786}
   m_GameObject: {fileID: 536458487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1058,8 +1060,9 @@ Transform:
 --- !u!114 &536458489
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 114991321090802938, guid: e3227ee31cab275468491f9c1bb26faf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1062733786}
   m_GameObject: {fileID: 536458487}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1069,7 +1072,9 @@ MonoBehaviour:
   countOfEnemies: 1
   enemyShip: {fileID: 1760013266197006, guid: 4c0cccdf7a961654ba4bb1b4f151cba1, type: 2}
   frigate: {fileID: 1696056027}
+  playerShip: {fileID: 925332771}
   waveCount: {fileID: 887423147}
+  score: 0
   speed: 0
 --- !u!1 &582684996
 GameObject:
@@ -9216,6 +9221,63 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 996323212}
+--- !u!1001 &1062733786
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 275252985}
+    m_Modifications:
+    - target: {fileID: 4291829058211856, guid: e3227ee31cab275468491f9c1bb26faf, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291829058211856, guid: e3227ee31cab275468491f9c1bb26faf, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291829058211856, guid: e3227ee31cab275468491f9c1bb26faf, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291829058211856, guid: e3227ee31cab275468491f9c1bb26faf, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291829058211856, guid: e3227ee31cab275468491f9c1bb26faf, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291829058211856, guid: e3227ee31cab275468491f9c1bb26faf, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291829058211856, guid: e3227ee31cab275468491f9c1bb26faf, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291829058211856, guid: e3227ee31cab275468491f9c1bb26faf, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114991321090802938, guid: e3227ee31cab275468491f9c1bb26faf,
+        type: 2}
+      propertyPath: frigate
+      value: 
+      objectReference: {fileID: 1696056027}
+    - target: {fileID: 114991321090802938, guid: e3227ee31cab275468491f9c1bb26faf,
+        type: 2}
+      propertyPath: waveCount
+      value: 
+      objectReference: {fileID: 887423147}
+    - target: {fileID: 114991321090802938, guid: e3227ee31cab275468491f9c1bb26faf,
+        type: 2}
+      propertyPath: playerShip
+      value: 
+      objectReference: {fileID: 925332771}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e3227ee31cab275468491f9c1bb26faf, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1074031535
 GameObject:
   m_ObjectHideFlags: 0
@@ -9991,6 +10053,48 @@ MonoBehaviour:
   Bullet_Forward_Force: 90000
   laserSound: {fileID: 8300000, guid: ab4749ec15ba04249b6b90fb687f272f, type: 3}
   laserSource: {fileID: 239941883}
+--- !u!1 &1355933088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1355933090}
+  - component: {fileID: 1355933089}
+  m_Layer: 0
+  m_Name: Score Counter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1355933089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355933088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5b51445b5cb8e4b87e9c2702806e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 387199490}
+  score: 0
+--- !u!4 &1355933090
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355933088}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -64.361305, y: 24.16391, z: -26.096931}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1395931300
 GameObject:
   m_ObjectHideFlags: 0

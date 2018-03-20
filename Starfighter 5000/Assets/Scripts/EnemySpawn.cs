@@ -9,7 +9,9 @@ public class EnemySpawn : MonoBehaviour {
 
     public GameObject enemyShip;
     public GameObject frigate;
+    public GameObject playerShip;
     public Text waveCount;
+    public int score;
 
     public float speed = 0.0f;
     float step;
@@ -27,6 +29,8 @@ public class EnemySpawn : MonoBehaviour {
 	void Start () {
         spawnedShips = false;
         enemyVector = transform.position;
+        playerVector = playerShip.transform.position;
+        score = 0;
     }
 	
 	// Update is called once per frame

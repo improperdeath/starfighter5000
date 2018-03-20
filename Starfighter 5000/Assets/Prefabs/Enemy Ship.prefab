@@ -443,6 +443,7 @@ MonoBehaviour:
   greenOrb: {fileID: 1887117061505290, guid: dc098b45d3f80ea449973f13f55f356e, type: 2}
   player: {fileID: 1295056128815070, guid: 783e1c9042145254ba3e3ff9e708aefd, type: 2}
   frigate: {fileID: 100000, guid: bebb0f544a57c254eb59b85477b2c49e, type: 3}
+  scoreScript: {fileID: 0}
 --- !u!114 &114120584157795152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -491,7 +492,7 @@ MonoBehaviour:
   Bullet: {fileID: 1120441112184650, guid: a9b2d654eab1eeb4cbafc8e23a286cee, type: 2}
   Bullet_Forward_Force: 45000
   ship: {fileID: 1983022518608710}
-  laserSound: {fileID: 0}
+  laserSound: {fileID: 8300000, guid: 9fa7e29b5e97b894c8f6cd34161f65cd, type: 3}
   laserSource: {fileID: 82384243499989184}
 --- !u!122 &122058271072665014
 Halo:

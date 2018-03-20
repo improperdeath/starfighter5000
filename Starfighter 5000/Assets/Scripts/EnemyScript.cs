@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class EnemyScript : MonoBehaviour
     public GameObject greenOrb;
     public GameObject player;
     public GameObject frigate;
+
+    public ScoreScript scoreScript;
 
     private GameObject enemy;
 
@@ -36,6 +39,10 @@ public class EnemyScript : MonoBehaviour
         Debug.Log(collision.collider.name);
         if (collision.collider.name == "greenOrb(Clone)")
         {
+            //increase score by 10
+            scoreScript.score += 10;
+
+            //destory object
             Destroy(gameObject);
         }
     }

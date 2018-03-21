@@ -16,6 +16,11 @@ public class destoryOnCollision : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        //remove health if needed
+        if(collision.collider.tag == "Player")
+        {
+            Debug.Log("Hit player");
+        }
         Destroy(gameObject);
     }
 }

@@ -13,7 +13,7 @@ public class playAreaScript : MonoBehaviour {
         if (other.name == "inside_panels")
         {
             Debug.Log("Left");
-            playerScript.isInPlayArea = false;
+            player.GetComponent<playerMovement>().isInPlayArea = false;
         }
     }
 
@@ -22,7 +22,7 @@ public class playAreaScript : MonoBehaviour {
         if (other.name == "inside_panels")
         {
             Debug.Log("Entered");
-            playerScript.isInPlayArea = true;
+            player.GetComponent<playerMovement>().isInPlayArea = true;
         }
     }
 

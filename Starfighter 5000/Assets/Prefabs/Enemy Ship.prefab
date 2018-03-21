@@ -135,8 +135,6 @@ GameObject:
   - component: {fileID: 4355612508259582}
   - component: {fileID: 33850904201081108}
   - component: {fileID: 23974877148894118}
-  - component: {fileID: 54737695182932954}
-  - component: {fileID: 64013349843068094}
   - component: {fileID: 114368102095765554}
   - component: {fileID: 114120584157795152}
   m_Layer: 0
@@ -211,7 +209,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760013266197006}
   m_LocalRotation: {x: -0, y: -0.76590806, z: -0, w: 0.6429502}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 107.5, y: 26.53059, z: 286.8}
   m_LocalScale: {x: 800.00226, y: 800.0013, z: 800.0011}
   m_Children:
   - {fileID: 4355612508259582}
@@ -304,21 +302,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983022518608710}
   m_Mesh: {fileID: 4300000, guid: 9961b326c6dcfab4a8fd5c227f9b04a6, type: 3}
---- !u!54 &54737695182932954
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1983022518608710}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!54 &54853405058592386
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -334,20 +317,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64013349843068094
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1983022518608710}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 9961b326c6dcfab4a8fd5c227f9b04a6, type: 3}
 --- !u!82 &82384243499989184
 AudioSource:
   m_ObjectHideFlags: 1
@@ -441,9 +410,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redOrb: {fileID: 1120441112184650, guid: a9b2d654eab1eeb4cbafc8e23a286cee, type: 2}
   greenOrb: {fileID: 1887117061505290, guid: dc098b45d3f80ea449973f13f55f356e, type: 2}
-  player: {fileID: 1295056128815070, guid: 783e1c9042145254ba3e3ff9e708aefd, type: 2}
+  player: {fileID: 0}
   frigate: {fileID: 100000, guid: bebb0f544a57c254eb59b85477b2c49e, type: 3}
-  scoreScript: {fileID: 0}
+  explosion: {fileID: 82736986651344656, guid: 3fc20d999d85d2f45817b709121831cc, type: 2}
+  scoreObj: {fileID: 1345521826634996, guid: 8c11af327be1f184193ba00fd9a1aab5, type: 2}
 --- !u!114 &114120584157795152
 MonoBehaviour:
   m_ObjectHideFlags: 1

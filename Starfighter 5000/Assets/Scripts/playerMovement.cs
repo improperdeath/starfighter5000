@@ -169,7 +169,7 @@ public class playerMovement : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.collider.name);
+        Debug.Log("Hit player: " + collision.collider.name);
         //stop movement
         stopMoving();
 
@@ -178,7 +178,7 @@ public class playerMovement : MonoBehaviour {
         {
             damagePlayer(50f);
         }
-        if (collision.gameObject.name == "redOrbClone")
+        if (collision.gameObject.name == "redOrb(Clone)")
         {
             damagePlayer(5f);
         }

@@ -178,9 +178,13 @@ public class playerMovement : MonoBehaviour {
         {
             damagePlayer(50f);
         }
-        if (collision.gameObject.name == "redOrb(Clone)")
+        if (collision.gameObject.tag == "enemyLaser")
         {
             damagePlayer(5f);
+        }
+        if(collision.gameObject.tag == "enemyShip")
+        {
+            damagePlayer(50f);
         }
     }
 
@@ -191,6 +195,10 @@ public class playerMovement : MonoBehaviour {
 
         //determine other object
         if (collision.gameObject.name == "frigate")
+        {
+            damagePlayer(50f);
+        }
+        if (collision.gameObject.tag == "enemy")
         {
             damagePlayer(50f);
         }

@@ -16,6 +16,7 @@ public class destoryOnCollision : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.collider.name);
         //remove health if needed
         if(collision.collider.tag == "Player")
         {

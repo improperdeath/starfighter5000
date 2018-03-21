@@ -23,10 +23,9 @@ GameObject:
   - component: {fileID: 54861192810069406}
   - component: {fileID: 122098498037731644}
   - component: {fileID: 114399964979369030}
-  - component: {fileID: 114450570890509482}
   m_Layer: 0
   m_Name: redOrb
-  m_TagString: Untagged
+  m_TagString: enemyLaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120441112184650}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.6893778, y: 0.013287783, z: 16.477884}
+  m_LocalPosition: {x: 2.2865093, y: 2.2261896, z: 72.903435}
   m_LocalScale: {x: 500, y: 500, z: 500}
   m_Children: []
   m_Father: {fileID: 0}
@@ -70,18 +69,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635d752cac2507648a833e4aa6304ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114450570890509482
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1120441112184650}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25172e5e3ecb25a4c89f6d28e2f3eb9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emitter: {fileID: 0}
 --- !u!122 &122098498037731644
 Halo:
   m_ObjectHideFlags: 1
@@ -100,7 +87,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120441112184650}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.005
   m_Height: 0

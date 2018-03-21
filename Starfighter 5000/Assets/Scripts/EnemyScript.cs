@@ -18,7 +18,7 @@ public class EnemyScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("MainCamera");
+        player = GameObject.FindGameObjectWithTag("Player");
         //give it 50% chance of targeting player or frigate
         if(Random.Range(1,2) == 1)
         {

@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
-  player: {fileID: 1342883907}
+  player: {fileID: 925332771}
 --- !u!135 &582684998
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5737,7 +5737,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2073076571
+  randomSeed: 1306227378
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11305,7 +11305,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1355184014
+  randomSeed: 1725669524
   InitialModule:
     serializedVersion: 3
     enabled: 1

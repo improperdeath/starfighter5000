@@ -23,7 +23,6 @@ public class playAreaScript : MonoBehaviour {
         Debug.Log("Entering playarea: " + other.tag);
         if (other.tag == "Player")
         {
-            Debug.Log("Entered");
             player.GetComponent<playerMovement>().isInPlayArea = true;
         }
     }

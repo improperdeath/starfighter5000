@@ -7,6 +7,7 @@ TagManager:
   - enemy
   - Spawner
   - enemyLaser
+  - enemyCount
   layers:
   - Default
   - TransparentFX

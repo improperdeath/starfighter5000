@@ -13,11 +13,14 @@ public class EnemyScript : MonoBehaviour
 
     public GameObject scoreObj;
 
+    public GameObject enemyCountObj;
+
     private bool isPlayer;
 
     // Use this for initialization
     void Start()
     {
+        enemyCountObj = GameObject.FindGameObjectWithTag("enemyCount");
         player = GameObject.FindGameObjectWithTag("Player");
         //give it 50% chance of targeting player or frigate
         if(Random.Range(1,2) == 1)
@@ -56,6 +59,11 @@ public class EnemyScript : MonoBehaviour
 
             //play explosion sound
             explosion.Play();
+
+            //add one to total enemies destroyed
+            Debug.Log("BEFORE death: " + enemyCountObj.gameObject.GetComponent<EnemyTotalCount>().totalDestroyedShips);
+            enemyCountObj.gameObject.GetComponent<EnemyTotalCount>().totalDestroyedShips++;
+            Debug.Log("AFTER death: " + enemyCountObj.gameObject.GetComponent<EnemyTotalCount>().totalDestroyedShips);
 
             //destory object
             Destroy(gameObject);

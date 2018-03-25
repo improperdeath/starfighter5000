@@ -10,11 +10,14 @@ public class EnemyCount : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        enemyCount = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        //grab the number of enemies present
+        enemyCount = GameObject.FindGameObjectsWithTag("enemy").Length;
+
         enemyCountText.text = "Enemies Remaining: " + enemyCount;
 	}
 }

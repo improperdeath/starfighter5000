@@ -1,4 +1,12 @@
-﻿using UnityEngine;
+﻿/************************************************
+ * 
+ * EnemyScript.cs
+ * This is used to handle the enemy ships
+ * 
+ * March 11th, 2018
+ *
+ ************************************************/
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -10,6 +18,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject frigate;
 
     public AudioSource explosion;
+    public AudioClip explosionClip;
 
     public GameObject scoreObj;
 
@@ -31,6 +40,7 @@ public class EnemyScript : MonoBehaviour
         {
             isPlayer = false;
         }
+        explosion.clip = explosionClip;
     }
 
     // Update is called once per frame
@@ -61,9 +71,7 @@ public class EnemyScript : MonoBehaviour
             explosion.Play();
 
             //add one to total enemies destroyed
-            Debug.Log("BEFORE death: " + enemyCountObj.gameObject.GetComponent<EnemyTotalCount>().totalDestroyedShips);
             enemyCountObj.gameObject.GetComponent<EnemyTotalCount>().totalDestroyedShips++;
-            Debug.Log("AFTER death: " + enemyCountObj.gameObject.GetComponent<EnemyTotalCount>().totalDestroyedShips);
 
             //destory object
             Destroy(gameObject);

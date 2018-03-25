@@ -19,6 +19,7 @@ public class PauseMenu : MonoBehaviour {
     public GameObject GUI;
     public GameObject PauseMenuUI;
     public GameObject DeathMenuUI;
+    public GameObject FrigateMenuUI;
 
     public Scene Menu;
 

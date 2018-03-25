@@ -36,6 +36,12 @@ public class shipSounds : MonoBehaviour {
             boostLoopSource.loop = true;
             boostLoopSource.PlayDelayed(0.5f);
         }
+        if(Time.timeScale != 1)
+        {
+            boostEndSource.Stop();
+            boostStartSource.Stop();
+            boostLoopSource.Stop();
+        }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             boostLoopSource.Stop();

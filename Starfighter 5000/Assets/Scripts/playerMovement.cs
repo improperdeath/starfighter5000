@@ -41,6 +41,7 @@ public class playerMovement : MonoBehaviour {
 	void Start () {
         //lock cursor to playarea
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         playerHealth = 100f;
 
@@ -169,7 +170,6 @@ public class playerMovement : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Hit player: " + collision.collider.name);
         //stop movement
         stopMoving();
 

@@ -18,6 +18,8 @@ public class MenuScreen : MonoBehaviour {
     public GameObject MenuUI;
     public GameObject SettingsUI;
 
+    public Text difficultyString;
+
     public bool particlesToggle = true;
 
     public string MainGame;
@@ -71,5 +73,46 @@ public class MenuScreen : MonoBehaviour {
         //show settings canvas
         SettingsUI.SetActive(true);
 
+    }
+
+    public void difficultySetting(int i)
+    {
+        if(i == 1)
+        {
+            //set to easy
+            difficultyString.text = "Difficulty Set to \"Easy\"";
+        }
+        if(i == 2)
+        {
+            //set to normal
+            difficultyString.text = "Difficulty Set to \"Normal\"";
+        }
+        if(i == 3)
+        {
+            //set to hard
+            difficultyString.text = "Difficulty Set to \"Hard\"";
+        }
+    }
+
+    public void MusicSlider(float f)
+    {
+        PlayerPrefs.SetFloat("musicVol", f);
+    }
+
+    public void SoundSlider(float f)
+    {
+        PlayerPrefs.SetFloat("soundVol", f);
+    }
+
+    public void particlesChanged(bool b)
+    {
+        int temp = 0;
+        if (b)
+        {
+            temp = 1;
+        }
+        PlayerPrefs.SetInt("particles", temp);
+
+        Debug.Log(PlayerPrefs.GetInt("particles"));
     }
 }

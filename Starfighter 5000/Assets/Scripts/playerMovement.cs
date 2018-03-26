@@ -208,7 +208,16 @@ public class playerMovement : MonoBehaviour {
     {
         playerDead = true;
         //start death sequence
-        //explosion sound
+        if (PlayerPrefs.HasKey("soundVol"))
+        {
+
+            playerExplosionSource.volume *= (PlayerPrefs.GetFloat("soundVol"));
+        }
+        else
+        {
+
+            playerExplosionSource.volume *= 1f;
+        }
         playerExplosionSource.Play();
 
         //red cover on screen
@@ -222,6 +231,17 @@ public class playerMovement : MonoBehaviour {
         //stop music and ambiance
         ambiance.Stop();
         BGMusic.Stop();
+
+        if (PlayerPrefs.HasKey("musicVol"))
+        {
+
+            MenuMusic.volume *= (PlayerPrefs.GetFloat("musicVol"));
+        }
+        else
+        {
+
+            MenuMusic.volume *= 1f;
+        }
         MenuMusic.Play();
     }
 

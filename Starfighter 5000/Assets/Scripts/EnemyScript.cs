@@ -17,8 +17,8 @@ public class EnemyScript : MonoBehaviour
     public GameObject player;
     public GameObject frigate;
 
+    public GameObject explosionObj;
     public AudioSource explosion;
-    public AudioClip explosionClip;
 
     public GameObject scoreObj;
 
@@ -31,8 +31,10 @@ public class EnemyScript : MonoBehaviour
     {
         enemyCountObj = GameObject.FindGameObjectWithTag("enemyCount");
         player = GameObject.FindGameObjectWithTag("Player");
+        explosionObj = GameObject.FindGameObjectWithTag("boom");
+        explosion = explosionObj.GetComponent<AudioSource>();
         //give it 50% chance of targeting player or frigate
-        if(Random.Range(1,2) == 1)
+        if(Random.Range(1,3) == 1)
         {
             isPlayer = true;
         }
@@ -40,7 +42,6 @@ public class EnemyScript : MonoBehaviour
         {
             isPlayer = false;
         }
-        explosion.clip = explosionClip;
     }
 
     // Update is called once per frame
@@ -64,10 +65,16 @@ public class EnemyScript : MonoBehaviour
         Debug.Log(collision.collider.tag);
         if (collision.collider.name == "greenOrb(Clone)")
         {
-            //increase score by 10
-            scoreObj.GetComponent<ScoreScript>().score += 10;
-
             //play explosion sound
+            if (PlayerPrefs.HasKey("soundVol"))
+            {
+
+                explosion.volume *= (PlayerPrefs.GetFloat("soundVol"));
+            } else
+            {
+
+                explosion.volume *= 1f;
+            }
             explosion.Play();
 
             //add one to total enemies destroyed

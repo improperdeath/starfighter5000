@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemySpawn : MonoBehaviour {
 
-    public int countOfEnemies = 1;
+    public int countOfEnemies = 3;
 
     public GameObject enemyShip;
     public GameObject frigate;
@@ -27,6 +27,22 @@ public class EnemySpawn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        //change depending on difficulty
+        int difficulty = PlayerPrefs.GetInt("difficulty");
+
+        if (difficulty == 1)
+        {
+            countOfEnemies = 1;
+        }
+        else if (difficulty == 2)
+        {
+            countOfEnemies = 3;
+        }
+        else if (difficulty == 3)
+        {
+            countOfEnemies = 5;
+        }
+
         spawnedShips = false;
         enemyVector = transform.position;
         playerVector = playerShip.transform.position;
@@ -44,8 +60,21 @@ public class EnemySpawn : MonoBehaviour {
                 waveCount.text = "Wave: " + (((countOfEnemies - 1) / 2) + 1);
             }
 
-            //increase size of next wave
-            countOfEnemies += 2;
+            //increase size of next wave depending on difficulty
+            int difficulty = PlayerPrefs.GetInt("difficulty");
+
+            if (difficulty == 1)
+            {
+                countOfEnemies += 1;
+            }
+            else if (difficulty == 2)
+            {
+                countOfEnemies += 3;
+            }
+            else if (difficulty == 3)
+            {
+                countOfEnemies += 5;
+            }
             spawnedShips = true;
         }
         else

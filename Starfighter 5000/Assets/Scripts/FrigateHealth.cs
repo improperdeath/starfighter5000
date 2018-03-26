@@ -56,6 +56,16 @@ public class FrigateHealth : MonoBehaviour
 
     void frigateDies()
     {
+        if (PlayerPrefs.HasKey("soundVol"))
+        {
+
+            explosion.volume *= (PlayerPrefs.GetFloat("soundVol"));
+        }
+        else
+        {
+
+            explosion.volume *= 1f;
+        }
         explosion.Play();
 
         //red cover on screen
@@ -69,6 +79,16 @@ public class FrigateHealth : MonoBehaviour
         //stop music and ambiance
         ambiance.Stop();
         BGMusic.Stop();
+        if (PlayerPrefs.HasKey("musicVol"))
+        {
+
+            MenuMusic.volume *= (PlayerPrefs.GetFloat("musicVol"));
+        }
+        else
+        {
+
+            MenuMusic.volume *= 1f;
+        }
         MenuMusic.Play();
 
     }

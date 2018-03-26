@@ -8,6 +8,7 @@ TagManager:
   - Spawner
   - enemyLaser
   - enemyCount
+  - boom
   layers:
   - Default
   - TransparentFX

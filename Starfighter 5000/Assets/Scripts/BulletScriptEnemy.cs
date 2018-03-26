@@ -27,6 +27,14 @@ public class BulletScriptEnemy : MonoBehaviour
         if (randomNumber == 1 && Time.timeScale == 1)
         {
             //sound effect
+            if (PlayerPrefs.HasKey("soundVol"))
+            {
+                laserSource.volume *= (PlayerPrefs.GetFloat("soundVol"));
+            }
+            else
+            {
+                laserSource.volume *= 1f;
+            }
             laserSource.Play();
 
             #region Code Grabbed From Video

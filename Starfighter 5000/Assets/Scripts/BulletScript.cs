@@ -24,6 +24,14 @@ public class BulletScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.timeScale == 1)
         {
             //sound effect
+            if (PlayerPrefs.HasKey("soundVol"))
+            {
+                laserSource.volume *= (PlayerPrefs.GetFloat("soundVol"));
+            }
+            else
+            {
+                laserSource.volume *= 1f;
+            }
             laserSource.Play();
 
             #region Code Grabbed From Video

@@ -19,8 +19,8 @@ public class EnemyTotalCount : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        dieText.text = "Total Enemies Destoryed: " + totalDestroyedShips;
-        frigateText.text = "Total Enemies Destoryed: " + totalDestroyedShips;
-        pauseText.text = "Enemies Destoryed: " + totalDestroyedShips;
+        dieText.text = "Total Enemies Destroyed: " + totalDestroyedShips;
+        frigateText.text = "Total Enemies Destroyed: " + totalDestroyedShips;
+        pauseText.text = "Enemies Destroyed: " + totalDestroyedShips;
     }
 }

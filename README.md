@@ -1,6 +1,17 @@
 # StarFighter5000
+Created by Matt Dean
+Made with Unity
 
+## Description
+The rules for this game is simple, keep the main frigate from being destroyed by the enemy ships that are warping into the zone. Keep the ship alive, and survive as long as you can until your ships return to fend them off.
 
+## Release
+Upon finishing the project, a link to download the game's finished format will be available here.
+
+## Build Instructions
+You will need to open the StarFighter5000 folder in Unity 5 at least. The oldest version used for this project was 2017.3.1f1 64bit.
+
+## License
 DON'T BE A DICK PUBLIC LICENSE
 Version 1.1, December 2016
 

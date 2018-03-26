@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - enemy
+  - Spawner
+  - enemyLaser
+  - enemyCount
+  - boom
+  - Frigate
   layers:
   - Default
   - TransparentFX

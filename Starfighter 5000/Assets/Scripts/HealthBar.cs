@@ -2,7 +2,7 @@
  * 
  * HealthBar.cs
  * This is used to keep the health bar updated
- * 
+ * Matt Dean, 200372929
  * March 10th, 2018
  *
  ************************************************/

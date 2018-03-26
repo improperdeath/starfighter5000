@@ -19,18 +19,20 @@ public class PauseMenu : MonoBehaviour {
     public GameObject GUI;
     public GameObject PauseMenuUI;
     public GameObject DeathMenuUI;
+    public GameObject FrigateMenuUI;
 
     public Scene Menu;
 
     // Use this for initialization
     void Start() {
-
+        GamePaused = false;
     }
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if ((Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1))
         {
+            Debug.Log("ESC pressed");
             if (GamePaused == true)
             {
                 ResumeGame();

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 496d2d2b7a2f48f44b29136f507a7d99
+timeCreated: 1521165459
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - enemyShip: {fileID: 1760013266197006, guid: 4c0cccdf7a961654ba4bb1b4f151cba1,
+      type: 2}
+  - player: {fileID: 100000, guid: 257ebcfcba4411f46bdd62a88d1691f6, type: 3}
+  - frigate: {fileID: 100000, guid: bebb0f544a57c254eb59b85477b2c49e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

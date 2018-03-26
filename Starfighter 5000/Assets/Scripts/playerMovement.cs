@@ -18,6 +18,7 @@ public class playerMovement : MonoBehaviour {
     public GameObject deathscreen;
     public GameObject GUI;
     float height;
+    public GameObject WarningMessage;
 
     //audio files
     public AudioClip playerExplosion;
@@ -25,6 +26,8 @@ public class playerMovement : MonoBehaviour {
     public AudioSource ambiance;
     public AudioSource BGMusic;
     public AudioSource MenuMusic;
+
+    public bool isInPlayArea;
 
     bool playerDead = false;
 
@@ -38,10 +41,16 @@ public class playerMovement : MonoBehaviour {
 	void Start () {
         //lock cursor to playarea
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         playerHealth = 100f;
 
         playerExplosionSource.clip = playerExplosion;
+
+        isInPlayArea = true;
+
+        //run check every second
+        InvokeRepeating("CheckPlayArea", 1, 1);
     }
 	
 	// Update is called once per frame
@@ -57,6 +66,27 @@ public class playerMovement : MonoBehaviour {
         {
             playerDies();
         }
+
+        //check if in playarea to determine if we need to show the warning message
+        if(isInPlayArea == false)
+        {
+            //show warning message
+            WarningMessage.SetActive(true);
+        }
+        else
+        {
+            //stop showing message
+            WarningMessage.SetActive(false);
+        }
+    }
+
+    void CheckPlayArea()
+    {
+        if(isInPlayArea == false)
+        {
+            damagePlayer(5f);
+            Debug.Log(playerHealth);
+        }
     }
 
     void movement()
@@ -71,19 +101,19 @@ public class playerMovement : MonoBehaviour {
         //boost
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            transform.Translate(0f, 0.3f, (2.0f * playerSpeed));
+            transform.Translate(0f, 0f, (3.0f * playerSpeed));
         }
 
         //speed up
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(0f, 0.3f, (1f * playerSpeed));
+            transform.Translate(0f, 0f, (1f * playerSpeed));
         }
 
         //back up
         else if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(0f, -0.3f, (-1f * playerSpeed));
+            transform.Translate(0f, 0f, (-1f * playerSpeed));
         }
 
         //otherwise move forward at default speed
@@ -119,17 +149,17 @@ public class playerMovement : MonoBehaviour {
         //rotate left
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.Rotate(0f, 0f, playerSpeed);
+            transform.Rotate(0f, 0f, playerSpeed * 3);
         }
 
         //rotate right
         if (Input.GetKey(KeyCode.E))
         {
-            transform.Rotate(0f, 0f, -playerSpeed);
+            transform.Rotate(0f, 0f, -playerSpeed * 3);
         }
     }
 
-    void damagePlayer(float amount)
+    public void damagePlayer(float amount)
     {
         //update health
         playerHealth -= amount;
@@ -144,9 +174,17 @@ public class playerMovement : MonoBehaviour {
         stopMoving();
 
         //determine other object
-        if(collision.gameObject.name == "frigate")
+        if (collision.gameObject.name == "frigate")
         {
-            damagePlayer(30f);
+            damagePlayer(50f);
+        }
+        if (collision.gameObject.tag == "enemyLaser")
+        {
+            damagePlayer(5f);
+        }
+        if(collision.gameObject.tag == "enemyShip")
+        {
+            damagePlayer(50f);
         }
     }
 
@@ -158,7 +196,11 @@ public class playerMovement : MonoBehaviour {
         //determine other object
         if (collision.gameObject.name == "frigate")
         {
-            damagePlayer(30f);
+            damagePlayer(50f);
+        }
+        if (collision.gameObject.tag == "enemy")
+        {
+            damagePlayer(50f);
         }
     }
 
@@ -166,7 +208,6 @@ public class playerMovement : MonoBehaviour {
     {
         playerDead = true;
         //start death sequence
-        //explosion sound
         playerExplosionSource.Play();
 
         //red cover on screen
@@ -180,6 +221,7 @@ public class playerMovement : MonoBehaviour {
         //stop music and ambiance
         ambiance.Stop();
         BGMusic.Stop();
+        
         MenuMusic.Play();
     }
 

@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject greenOrb;
     public GameObject player;
     public GameObject frigate;
+    public GameObject enemyGlow;
 
     public GameObject explosionObj;
     public AudioSource explosion;
@@ -29,6 +30,7 @@ public class EnemyScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //enemyGlow = (Behaviour)GetComponent("Halo");
         enemyCountObj = GameObject.FindGameObjectWithTag("enemyCount");
         player = GameObject.FindGameObjectWithTag("Player");
         frigate = GameObject.FindGameObjectWithTag("Frigate");
@@ -43,6 +45,8 @@ public class EnemyScript : MonoBehaviour
         {
             isPlayer = false;
         }
+
+
     }
 
     // Update is called once per frame
@@ -67,15 +71,6 @@ public class EnemyScript : MonoBehaviour
         if (collision.collider.name == "greenOrb(Clone)")
         {
             //play explosion sound
-            if (PlayerPrefs.HasKey("soundVol"))
-            {
-
-                explosion.volume *= (PlayerPrefs.GetFloat("soundVol"));
-            } else
-            {
-
-                explosion.volume *= 1f;
-            }
             explosion.Play();
 
             //add one to total enemies destroyed

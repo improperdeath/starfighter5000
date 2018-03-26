@@ -20,6 +20,7 @@ public class MenuScreen : MonoBehaviour {
     public Toggle particlesToggleUI;
 
     public Text difficultyString;
+    public Slider soundSlider;
 
     public bool particlesToggle = true;
 
@@ -27,6 +28,16 @@ public class MenuScreen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        if (PlayerPrefs.HasKey("soundVol") == true)
+        {
+            soundSlider.value = PlayerPrefs.GetFloat("soundVol");
+        }
+        else
+        {
+            soundSlider.value = 1;
+            PlayerPrefs.SetFloat("soundVol", 1f);
+        }
         int i = PlayerPrefs.GetInt("difficulty");
         if (i == 1)
         {

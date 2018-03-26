@@ -32,16 +32,6 @@ public class shipSounds : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (PlayerPrefs.HasKey("soundVol"))
-            {
-                boostStartSource.volume *= (PlayerPrefs.GetFloat("soundVol"));
-                boostLoopSource.volume *= (PlayerPrefs.GetFloat("soundVol"));
-            }
-            else
-            {
-                boostStartSource.volume *= 1f;
-                boostLoopSource.volume *= 1f;
-            }
             boostStartSource.Play();
             boostLoopSource.loop = true;
             boostLoopSource.PlayDelayed(0.5f);

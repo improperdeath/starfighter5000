@@ -5779,6 +5779,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bebb0f544a57c254eb59b85477b2c49e, type: 3}
+      propertyPath: m_TagString
+      value: Frigate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bebb0f544a57c254eb59b85477b2c49e, type: 3}
   m_IsPrefabParent: 0
@@ -6658,7 +6662,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1997681470
+  randomSeed: -866326478
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13605,7 +13609,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1039200767
+  randomSeed: -367619198
   InitialModule:
     serializedVersion: 3
     enabled: 1

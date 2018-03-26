@@ -31,6 +31,7 @@ public class EnemyScript : MonoBehaviour
     {
         enemyCountObj = GameObject.FindGameObjectWithTag("enemyCount");
         player = GameObject.FindGameObjectWithTag("Player");
+        frigate = GameObject.FindGameObjectWithTag("Frigate");
         explosionObj = GameObject.FindGameObjectWithTag("boom");
         explosion = explosionObj.GetComponent<AudioSource>();
         //give it 50% chance of targeting player or frigate

@@ -9,6 +9,7 @@ TagManager:
   - enemyLaser
   - enemyCount
   - boom
+  - Frigate
   layers:
   - Default
   - TransparentFX

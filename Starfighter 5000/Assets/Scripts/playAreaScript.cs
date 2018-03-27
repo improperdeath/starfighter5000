@@ -10,7 +10,7 @@ public class playAreaScript : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exiting playarea: " + other.tag);
+        //Debug.Log("Exiting playarea: " + other.tag);
         if (other.tag == "Player")
         {
             Debug.Log("Left");
@@ -20,7 +20,7 @@ public class playAreaScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entering playarea: " + other.tag);
+        //Debug.Log("Entering playarea: " + other.tag);
         if (other.tag == "Player")
         {
             player.GetComponent<playerMovement>().isInPlayArea = true;

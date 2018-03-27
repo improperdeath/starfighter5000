@@ -90,7 +90,8 @@ public class EnemySpawn : MonoBehaviour {
         for (int i = 0; i < countOfEnemies; i++)
         {
             step = speed * Time.deltaTime;
-            randomLocation = Random.insideUnitSphere * 2000; //5 is radius
+            //randomLocation = Random.insideUnitSphere * 2000;      //inside playarea (including frigate... bad news here)
+            randomLocation = Random.onUnitSphere * 2000;            //on surface of playarea
             rotation = Vector3.RotateTowards(enemyVector, playerVector, step, 0.0f);
             rotationQuaternion = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
             GameObject enemyShipSpawn = Instantiate(enemyShip, randomLocation, rotationQuaternion);

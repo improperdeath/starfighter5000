@@ -27,9 +27,12 @@ public class EnemyScript : MonoBehaviour
 
     private bool isPlayer;
 
+    public float speed;
+
     // Use this for initialization
     void Start()
     {
+        speed = 10f;
         //enemyGlow = (Behaviour)GetComponent("Halo");
         enemyCountObj = GameObject.FindGameObjectWithTag("enemyCount");
         player = GameObject.FindGameObjectWithTag("Player");
@@ -53,8 +56,6 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         //point at enemy (shooting happens in another script)
-
-
         if (isPlayer)
         {
             transform.LookAt(player.transform);
@@ -62,6 +63,14 @@ public class EnemyScript : MonoBehaviour
         else
         {
             transform.LookAt(frigate.transform);
+        }
+
+        //slowly move towards frigate
+        if (Time.timeScale == 1)
+        {
+            var step = speed * Time.deltaTime;
+            //Debug.Log("Speed: " + speed + "Step: " + step);
+            transform.position = Vector3.MoveTowards(transform.position, frigate.transform.position, step);
         }
     }
 

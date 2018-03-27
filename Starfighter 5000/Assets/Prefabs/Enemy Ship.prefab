@@ -151,8 +151,6 @@ GameObject:
   - component: {fileID: 4355612508259582}
   - component: {fileID: 33850904201081108}
   - component: {fileID: 23974877148894118}
-  - component: {fileID: 114368102095765554}
-  - component: {fileID: 114120584157795152}
   m_Layer: 0
   m_Name: enemy_fighter
   m_TagString: Untagged
@@ -238,7 +236,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760013266197006}
   m_LocalRotation: {x: -0, y: -0.76590806, z: -0, w: 0.6429502}
-  m_LocalPosition: {x: 912.9304, y: 710.46405, z: -2337.4111}
+  m_LocalPosition: {x: 3939.0215, y: 120.21539, z: 8.20956}
   m_LocalScale: {x: 800.00226, y: 800.0013, z: 800.0011}
   m_Children:
   - {fileID: 4355612508259582}
@@ -357,7 +355,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9fa7e29b5e97b894c8f6cd34161f65cd, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -447,39 +445,6 @@ MonoBehaviour:
   explosion: {fileID: 82736986651344656, guid: 3fc20d999d85d2f45817b709121831cc, type: 2}
   scoreObj: {fileID: 1345521826634996, guid: 8c11af327be1f184193ba00fd9a1aab5, type: 2}
   enemyCountObj: {fileID: 0}
---- !u!114 &114120584157795152
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1983022518608710}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00e439a9729927744b46ca85c4f97561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bullet_Emitter: {fileID: 1955573027587296}
-  Bullet: {fileID: 1120441112184650, guid: a9b2d654eab1eeb4cbafc8e23a286cee, type: 2}
-  Bullet_Forward_Force: 9000
-  ship: {fileID: 1983022518608710}
-  laserSound: {fileID: 8300000, guid: 9fa7e29b5e97b894c8f6cd34161f65cd, type: 3}
-  laserSource: {fileID: 82384243499989184}
---- !u!114 &114368102095765554
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1983022518608710}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c931cd779cd1ca46be81d55c4e65238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bullet_Emitter: {fileID: 1955573027587296}
-  Bullet: {fileID: 1120441112184650, guid: a9b2d654eab1eeb4cbafc8e23a286cee, type: 2}
-  Bullet_Forward_Force: 9000
-  laserSound: {fileID: 8300000, guid: 9fa7e29b5e97b894c8f6cd34161f65cd, type: 3}
-  laserSource: {fileID: 82384243499989184}
 --- !u!114 &114865455052335178
 MonoBehaviour:
   m_ObjectHideFlags: 1

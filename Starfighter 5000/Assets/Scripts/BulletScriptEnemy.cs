@@ -26,9 +26,6 @@ public class BulletScriptEnemy : MonoBehaviour
         randomNumber = Random.Range(1, 500);
         if (randomNumber == 1 && Time.timeScale == 1)
         {
-            //sound effect
-            laserSource.Play();
-
             #region Code Grabbed From Video
             //video:
             /*
@@ -46,6 +43,9 @@ public class BulletScriptEnemy : MonoBehaviour
             
             Destroy(Temporary_Bullet_Handler, 3.0f);
             #endregion
+
+            //sound effect
+            laserSource.Play();
         }
     }
 }

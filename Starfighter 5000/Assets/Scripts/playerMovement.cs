@@ -101,19 +101,19 @@ public class playerMovement : MonoBehaviour {
         //boost
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            transform.Translate(0f, 0f, (3.0f * playerSpeed));
+            transform.Translate(0f, 0f, (4.0f * playerSpeed));
         }
 
         //speed up
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(0f, 0f, (1f * playerSpeed));
+            transform.Translate(0f, 0f, (2f * playerSpeed));
         }
 
         //back up
         else if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(0f, 0f, (-1f * playerSpeed));
+            transform.Translate(0f, 0f, (-2f * playerSpeed));
         }
 
         //otherwise move forward at default speed

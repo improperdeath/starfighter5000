@@ -26,8 +26,8 @@ public class MenuScreen : MonoBehaviour {
 
     public string MainGame;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
 
         if (PlayerPrefs.HasKey("soundVol") == true)
         {
@@ -55,24 +55,27 @@ public class MenuScreen : MonoBehaviour {
             difficultyString.text = "Difficulty Set to \"Normal\"";
         }
 
-        if (PlayerPrefs.GetInt("particles") == 1)
+        if (PlayerPrefs.HasKey("particles"))
         {
-            particlesToggle = true;
-            particlesToggleUI.isOn = true;
-        }
-        else if (PlayerPrefs.GetInt("particles") == 0)
-        {
-            particlesToggle = false;
-            particlesToggleUI.isOn = false;
+            if (PlayerPrefs.GetInt("particles") == 1)
+            {
+                particlesToggle = true;
+                particlesToggleUI.isOn = true;
+            }
+            else
+            {
+                particlesToggle = false;
+                particlesToggleUI.isOn = false;
+            }
         }
         else
         {
+            PlayerPrefs.SetInt("particles", 1);
             particlesToggle = true;
             particlesToggleUI.isOn = true;
         }
 
         PlayerPrefs.SetFloat("soundVol", 1f);
-        PlayerPrefs.SetFloat("musicVol", 1f);
     }
 	
 	// Update is called once per frame

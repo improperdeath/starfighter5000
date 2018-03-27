@@ -11,7 +11,7 @@ public class EnemySpawn : MonoBehaviour {
     public GameObject frigate;
     public GameObject playerShip;
     public Text waveCount;
-    public int score;
+    int wave;
 
     public float speed = 0.0f;
     float step;
@@ -27,6 +27,7 @@ public class EnemySpawn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        wave = 0;
         //change depending on difficulty
         int difficulty = PlayerPrefs.GetInt("difficulty");
 
@@ -46,7 +47,6 @@ public class EnemySpawn : MonoBehaviour {
         spawnedShips = false;
         enemyVector = transform.position;
         playerVector = playerShip.transform.position;
-        score = 0;
     }
 	
 	// Update is called once per frame
@@ -54,11 +54,9 @@ public class EnemySpawn : MonoBehaviour {
     {
         if (spawnedShips == false)
         {
-            for (int i = 0; i < countOfEnemies; i++)
-            {
-                spawnShips();             
-                waveCount.text = "Wave: " + (((countOfEnemies - 1) / 2) + 1);
-            }
+                spawnShips();
+                wave++;
+                waveCount.text = "Wave: " + wave;
 
             //increase size of next wave depending on difficulty
             int difficulty = PlayerPrefs.GetInt("difficulty");
@@ -89,11 +87,14 @@ public class EnemySpawn : MonoBehaviour {
 
     void spawnShips()
     {
-        step = speed * Time.deltaTime;
-        randomLocation = Random.insideUnitSphere * 2000; //5 is radius
-        rotation = Vector3.RotateTowards(enemyVector, playerVector, step, 0.0f);
-        rotationQuaternion = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
-        GameObject enemyShipSpawn = Instantiate(enemyShip, randomLocation, rotationQuaternion);
-        enemyShipSpawn.transform.LookAt(frigate.transform);
+        for (int i = 0; i < countOfEnemies; i++)
+        {
+            step = speed * Time.deltaTime;
+            randomLocation = Random.insideUnitSphere * 2000; //5 is radius
+            rotation = Vector3.RotateTowards(enemyVector, playerVector, step, 0.0f);
+            rotationQuaternion = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
+            GameObject enemyShipSpawn = Instantiate(enemyShip, randomLocation, rotationQuaternion);
+            enemyShipSpawn.transform.LookAt(frigate.transform);
+        }
     }
 }

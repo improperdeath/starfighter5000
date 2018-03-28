@@ -23,24 +23,17 @@ public class BulletScript : MonoBehaviour
         GameObject Temporary_Bullet_Handler;
         if (Input.GetMouseButtonDown(0) && Time.timeScale == 1)
         {
+            var newBullet = (GameObject)Instantiate(Bullet, Bullet_Emitter.transform.position, Bullet_Emitter.transform.rotation);
+
+            Rigidbody Temporary_RigidBody;
+            Temporary_RigidBody = newBullet.GetComponent<Rigidbody>();
+
+            newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * Bullet_Forward_Force);
+
+            Destroy(newBullet, 3.0f);
+
             //sound effect
             laserSource.Play();
-
-            #region Code Grabbed From Video
-            //video:
-            /*
-            https://www.youtube.com/watch?v=FD9HZB0Jn1w
-            */
-            Temporary_Bullet_Handler = Instantiate(Bullet, Bullet_Emitter.transform.position, Bullet_Emitter.transform.rotation) as GameObject;
-            Temporary_Bullet_Handler.transform.Rotate(Vector3.left * 270);
-            
-            Rigidbody Temporary_RigidBody;
-            Temporary_RigidBody = Temporary_Bullet_Handler.GetComponent<Rigidbody>();
-            
-            Temporary_RigidBody.AddForce(transform.forward * Bullet_Forward_Force);
-            
-            Destroy(Temporary_Bullet_Handler, 3.0f);
-            #endregion
         }
     }
 }

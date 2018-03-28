@@ -51,7 +51,7 @@ public class FrigateHealth : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        damageFrigate(.5f);
+        damageFrigate(0.5f);
     }
 
     public void damageFrigate(float damage)

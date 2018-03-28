@@ -511,7 +511,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -691,8 +691,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -94}
-  m_SizeDelta: {x: 492.5, y: 1779.8}
+  m_AnchoredPosition: {x: 5.9, y: -211.7}
+  m_SizeDelta: {x: 504.3, y: 2015.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2097562632
 Animator:
@@ -747,10 +747,9 @@ MonoBehaviour:
     Seppanen\r\n\nCommand Frigate\r:\nK.L.Jonasson, Winnipeg, Canada.\r\nTriki Minut
     Interactive\r\nwww.trikiminut.com\r\n\nEnemy Fighter\r:\nK.L.Jonasson, Winnipeg,
     Canada.\r\nTriki Minut Interactive\r\nwww.trikiminut.com\r\n\nExplosions\r:\nBleed
-    - http://remusprites.carbonmade.com/\r\n\nWarp Effect\r:\nhttps://opengameart.org/content/warp-effect\r\n\nSounds\r\n----------\nLaser
-    Fire\r:\nDklon\r\n\nExplosions\r:\nhttp://www.cubeengine.com/forum.php4?action=display_thread&thread_id=2164\r\n\nSpeed
+    - http://remusprites.carbonmade.com/\r\n\nSounds\r\n----------\nLaser Fire\r:\nDklon\r\n\nExplosions\r:\nhttp://www.cubeengine.com/forum.php4?action=display_thread&thread_id=2164\r\n\nSpeed
     Boost\r:\nIwan Gabovitch (qubodup@gmail.com)\r\n\nPowerup Sound Effect\r:\nJes\xFAs
-    Lastra\r\n\nMusic\r\n----------\nMain Menu\r:\nTed Kerr\r\n\nGameplay\r:\nhttps://soundcloud.com/alexandr-zhelanov\r\n\n\n\n\n\n\n\n\n\nThank
+    Lastra\r\n\nMusic\r\n----------\nMain Menu\r:\nTed Kerr\r\n\nGameplay\r:\nhttps://soundcloud.com/alexandr-zhelanov\r\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThank
     you for playing\nMatt\n\r\n\n\n\n\n\n\n\n\r\n"
 --- !u!222 &2097562634
 CanvasRenderer:

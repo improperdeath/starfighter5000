@@ -22,27 +22,32 @@ public class BulletScriptEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject Temporary_Bullet_Handler;
-        randomNumber = Random.Range(1, 500);
+        if (PlayerPrefs.HasKey("difficulty"))
+        {
+            if (PlayerPrefs.GetInt("difficulty") == 1)
+            {
+                randomNumber = Random.Range(1, 1000);
+            }
+            if (PlayerPrefs.GetInt("difficulty") == 2)
+            {
+                randomNumber = Random.Range(1, 500);
+            }
+            if (PlayerPrefs.GetInt("difficulty") == 3)
+            {
+                randomNumber = Random.Range(1, 200);
+            }
+        }
+        else
+        {
+            randomNumber = Random.Range(1, 500);
+        }
         if (randomNumber == 1 && Time.timeScale == 1)
         {
-            #region Code Grabbed From Video
-            //video:
-            /*
-            https://www.youtube.com/watch?v=FD9HZB0Jn1w
-            */
+            var newBullet = (GameObject)Instantiate(Bullet, Bullet_Emitter.transform.position, Bullet_Emitter.transform.rotation);
+
+            newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * Bullet_Forward_Force);
             
-            Temporary_Bullet_Handler = Instantiate(Bullet, Bullet_Emitter.transform.position, Bullet_Emitter.transform.rotation) as GameObject;            
-            
-            Temporary_Bullet_Handler.transform.Rotate(Vector3.left * 0);
-            
-            Rigidbody Temporary_RigidBody;
-            Temporary_RigidBody = Temporary_Bullet_Handler.GetComponent<Rigidbody>();
-            
-            Temporary_RigidBody.AddForce(transform.forward * Bullet_Forward_Force);
-            
-            Destroy(Temporary_Bullet_Handler, 3.0f);
-            #endregion
+            Destroy(newBullet, 3.0f);
 
             //sound effect
             laserSource.Play();

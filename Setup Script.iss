@@ -2,16 +2,16 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Starfighter 5000"
-#define MyAppVersion "1.0"
+#define MyAppVersion "1.1"
 #define MyAppPublisher "Matt Dean"
 #define MyAppURL "http://www.mdean.me"
-#define MyAppExeName "StarFighter 5000 v1.0.exe"
+#define MyAppExeName "StarFighter_5000_v1.1.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{24F7066C-F20D-4947-A8E0-C9CD47E5D87D}
+AppId={{D5425711-AD5A-4A1B-AD60-36D4A65CEE53}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -22,7 +22,7 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=F:\User Files\Local Projects\StarFighter5000\LICENSE.txt
-OutputBaseFilename=StarFighter 5000 v1.0 Install
+OutputBaseFilename=Starfighter 5000 v1.1  Install
 SetupIconFile=F:\User Files\Local Projects\StarFighter5000\SF5000 Icon.ico
 Compression=lzma
 SolidCompression=yes
@@ -35,8 +35,9 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "F:\User Files\Local Projects\StarFighter5000\Builds\Desktop\StarFighter 5000 v1.0.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "F:\User Files\Local Projects\StarFighter5000\Builds\Desktop\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "F:\User Files\Local Projects\StarFighter5000\Builds\PC\StarFighter_5000_v1.1.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "F:\User Files\Local Projects\StarFighter5000\Builds\PC\UnityPlayer.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "F:\User Files\Local Projects\StarFighter5000\Builds\PC\StarFighter_5000_v1.1_Data\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

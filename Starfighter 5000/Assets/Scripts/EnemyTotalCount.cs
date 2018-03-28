@@ -39,6 +39,11 @@ public class EnemyTotalCount : MonoBehaviour {
                 difficultyTextFrigate.text += "Hard";
             }
         }
+        else
+        {
+            difficultyText.text = "Difficulty: Normal";
+            difficultyTextFrigate.text = difficultyText.text;
+        }
 	}
 	
 	// Update is called once per frame

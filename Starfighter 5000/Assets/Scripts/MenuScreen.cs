@@ -17,6 +17,7 @@ public class MenuScreen : MonoBehaviour {
 
     public GameObject MenuUI;
     public GameObject SettingsUI;
+    public GameObject ControlsUI;
     public Toggle particlesToggleUI;
 
     public Text difficultyString;
@@ -38,7 +39,15 @@ public class MenuScreen : MonoBehaviour {
             soundSlider.value = 1;
             PlayerPrefs.SetFloat("soundVol", 1f);
         }
-        int i = PlayerPrefs.GetInt("difficulty");
+        int i;
+        if (PlayerPrefs.HasKey("difficulty"))
+        {
+            i = PlayerPrefs.GetInt("difficulty");
+        }
+        else
+        {
+            i = 1;
+        }
         if (i == 1)
         {
             //set to easy
@@ -98,8 +107,9 @@ public class MenuScreen : MonoBehaviour {
 
     public void MenuBtn()
     {
-        //hide settings canvas
+        //hide settings and controls canvas
         SettingsUI.SetActive(false);
+        ControlsUI.SetActive(false);
 
         //show menu canvas
         MenuUI.SetActive(true);
@@ -114,14 +124,21 @@ public class MenuScreen : MonoBehaviour {
 
     public void SettingsButton()
     {
-        Debug.Log("starting settings...");
-
-        //hide menu canvas
-        MenuUI.SetActive(false);
-
         //show settings canvas
         SettingsUI.SetActive(true);
 
+        //hide menu and controls canvas
+        ControlsUI.SetActive(false);
+        MenuUI.SetActive(false);
+    }
+
+    public void ControlsButton()
+    {
+        //hide settings
+        SettingsUI.SetActive(false);
+
+        //show controls
+        ControlsUI.SetActive(true);
     }
 
     public void difficultySetting(int i)

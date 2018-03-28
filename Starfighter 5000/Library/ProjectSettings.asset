@@ -609,11 +609,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Starfighter 5000
   metroPackageVersion: 
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: Matt Dean
+  metroCertificateIssuer: Matt Dean
+  metroCertificateNotAfter: 8002970237e5d401
   metroApplicationDescription: Starfighter 5000
   wsaImages: {}
   metroTileShortName: 

@@ -23,7 +23,25 @@ public class BulletScriptEnemy : MonoBehaviour
     void Update()
     {
         GameObject Temporary_Bullet_Handler;
-        randomNumber = Random.Range(1, 500);
+        if (PlayerPrefs.HasKey("difficulty"))
+        {
+            if (PlayerPrefs.GetInt("difficulty") == 1)
+            {
+                randomNumber = Random.Range(1, 1000);
+            }
+            if (PlayerPrefs.GetInt("difficulty") == 2)
+            {
+                randomNumber = Random.Range(1, 500);
+            }
+            if (PlayerPrefs.GetInt("difficulty") == 3)
+            {
+                randomNumber = Random.Range(1, 200);
+            }
+        }
+        else
+        {
+            randomNumber = Random.Range(1, 500);
+        }
         if (randomNumber == 1 && Time.timeScale == 1)
         {
             #region Code Grabbed From Video

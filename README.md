@@ -6,7 +6,7 @@ Made with Unity
 The rules for this game is simple, keep the main frigate from being destroyed by the enemy ships that are warping into the zone. Keep the ship alive, and survive as long as you can until your ships return to fend them off.
 
 ## Release
-(Here)[http://mdean.me/projects.html] is where you can download the most current stable version for desktop.
+[Here](http://mdean.me/projects.html) is where you can download the most current stable version for desktop.
 
 ## Build Instructions
 You will need to open the StarFighter5000 folder in Unity 5 at least. The oldest version used for this project was 2017.3.1f1 64bit.
